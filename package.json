@@ -3,6 +3,8 @@
     "name": "startbootstrap-sb-admin",
     "version": "5.0.2",
     "description": "A one page app landing page HTML theme for Bootstrap.",
+     "engines": {
+    "node": "12.x"},
     "keywords": [
         "css",
         "sass",
