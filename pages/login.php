@@ -27,7 +27,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body  style="background-color:#012241">
 
   <div class="container">
 
@@ -44,7 +44,7 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome to Sales and Inventory!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Welcome to Customer track system!</h1>
                   </div>
                   <form class="user" role="form" action="processlogin.php" method="post">
                     <div class="form-group">
@@ -59,7 +59,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button class="btn btn-primary btn-user btn-block" type="submit" name="btnlogin">Login</button>
+                    <button class="btn  btn-user btn-block" type="submit" name="btnlogin" style="background-color:#012241;color:white;">Login</button>
                     <hr>
                   <!-- <div class="text-center">
                     <a class="small" href="register.php">Create an Account!</a>

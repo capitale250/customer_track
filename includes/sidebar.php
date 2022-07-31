@@ -56,14 +56,14 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#012241;">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <!-- <i class="fas fa-laugh-wink"></i> -->
         </div>
-        <div class="sidebar-brand-text mx-3">Sales and Inventory System</div>
+        <div class="sidebar-brand-text mx-3">Customer track System</div>
       </a>
 
       <!-- Divider -->
@@ -89,11 +89,11 @@
           <span>Customer</span></a>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="employee.php">
           <i class="fas fa-fw fa-user"></i>
           <span>Employee</span></a>
-      </li>
+      </li> -->
       
       <li class="nav-item">
         <a class="nav-link" href="product.php">
@@ -101,30 +101,30 @@
           <span>Product</span></a>
       </li>
       
-      <li class="nav-item">
+     <li class="nav-item">
         <a class="nav-link" href="inventory.php">
           <i class="fas fa-fw fa-archive"></i>
           <span>Inventory</span></a>
       </li>
       
-      <li class="nav-item">
-        <a class="nav-link" href="transaction.php">
+       <li class="nav-item">
+        <a class="nav-link" href="birthdays.php">
           <i class="fas fa-fw fa-retweet"></i>
-          <span>Transaction</span></a>
+          <span>Birth days</span></a>
       </li>
       
-      <li class="nav-item">
-        <a class="nav-link" href="supplier.php">
-          <i class="fas fa-fw fa-cogs"></i>
-          <span>Supplier</span></a>
-      </li>
-      
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="user.php">
+          <i class="fas fa-fw fa-cogs"></i>
+          <span>Users</span></a>
+      </li> -->
+      
+      <li class="nav-item">
+        <a class="nav-link" href="transactform.php">
           <i class="fas fa-fw fa-users"></i>
-          <span>Accounts</span></a>
-      </li>
-      <!-- Divider -->
+          <span>transactions</span></a>
+      </li> 
+      Divider
       <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->

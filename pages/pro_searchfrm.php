@@ -20,28 +20,28 @@ include'../includes/sidebar.php';
   }           
 }
             ?>
-          <center><div class="card shadow mb-4 col-xs-12 col-md-8 border-bottom-primary">
+          <center><div class="card shadow mb-4 col-xs-12 col-md-8 " style="border-bottom:8px solid #012241;">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Product's Detail</h4>
+              <h4 class="m-2 font-weight-bold " style="color:#012241;">Product's Detail</h4>
             </div>
-            <a href="product.php?action=add" type="button" class="btn btn-primary bg-gradient-primary btn-block"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back</a>
+            <a href="product.php?action=add" type="button" class="btn  btn-block" style="background-color:#012241;color:white"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back</a>
             <div class="card-body">
           <?php 
-            $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME,DESCRIPTION, COUNT(`QTY_STOCK`) AS "QTY_STOCK", COUNT(`ON_HAND`) AS "ON_HAND",PRICE, c.CNAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID WHERE PRODUCT_CODE ='.$_GET['id'];
+            $query = 'SELECT * FROM products  WHERE PRODUCT_ID ='.$_GET['id'];
             $result = mysqli_query($db, $query) or die(mysqli_error($db));
               while($row = mysqli_fetch_array($result))
               {   
                 $zz= $row['PRODUCT_ID'];
-                $zzz= $row['PRODUCT_CODE'];
+                // $zzz= $row['PRODUCT_CODE'];
                 $i= $row['NAME'];
                 $a=$row['DESCRIPTION'];
                 $c=$row['PRICE'];
-                $d=$row['CNAME'];
+                // $d=$row['CNAME'];
               }
               $id = $_GET['id'];
           ?>
 
-                  <div class="form-group row text-left">
+                  <!-- <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
                           Product Code<br>
@@ -52,9 +52,9 @@ include'../includes/sidebar.php';
                           : <?php echo $zzz; ?><br>
                         </h5>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row text-left">
-                      <div class="col-sm-3 text-primary">
+                      <div class="col-sm-3 " style="color:#012241;">
                         <h5>
                           Product Name<br>
                         </h5>
@@ -66,7 +66,7 @@ include'../includes/sidebar.php';
                       </div>
                     </div>
                   <div class="form-group row text-left">
-                      <div class="col-sm-3 text-primary">
+                      <div class="col-sm-3 " style="color:#012241;">
                         <h5>
                           Description<br>
                         </h5>
@@ -78,7 +78,7 @@ include'../includes/sidebar.php';
                       </div>
                     </div>
                   <div class="form-group row text-left">
-                      <div class="col-sm-3 text-primary">
+                      <div class="col-sm-3 " style="color:#012241;">
                         <h5>
                           Price<br>
                         </h5>
@@ -90,21 +90,21 @@ include'../includes/sidebar.php';
                       </div>
                     </div>
                   <div class="form-group row text-left">
-                      <div class="col-sm-3 text-primary">
+                      <div class="col-sm-3 " style="color:#012241;">
                         <h5>
-                          Category<br>
+                          Product id<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
                         <h5>
-                          : <?php echo $d; ?><br>
+                          : <?php echo $zz; ?><br>
                         </h5>
                       </div>
                     </div>
                 </div>
           </div></center>
 
-          <div class="card shadow mb-4 col-xs-12 col-md-15 border-bottom-primary">
+          <!-- <div class="card shadow mb-4 col-xs-12 col-md-15 border-bottom-primary">
             <div class="card-header py-3">
               <h4 class="m-2 font-weight-bold text-primary">Inventory</h4>
             </div>
@@ -146,7 +146,7 @@ include'../includes/sidebar.php';
                             </table>
                         </div>
                     </div>
-                  </div>
+                  </div> -->
 
 
 <?php

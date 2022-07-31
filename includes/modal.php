@@ -57,7 +57,7 @@ window.onload = function() {
     </div>
   </div>
   <!-- Customer Modal-->
-  <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -85,9 +85,9 @@ window.onload = function() {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Customer Modal-->
-  <div class="modal fade" id="poscustomerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="poscustomerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -115,13 +115,13 @@ window.onload = function() {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Employee Modal-->
   <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add A Customer</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -147,20 +147,20 @@ window.onload = function() {
               <div class="form-group">
                 <input class="form-control" placeholder="Phone Number" name="phonenumber" required>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <?php
                   echo $job;
                 ?>
-              </div>
+              </div> -->
               <div class="form-group">
-                <input placeholder="Hired Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="FromDate" name="hireddate" class="form-control" />
+                <input placeholder="Birth Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="FromDate" name="hireddate" class="form-control" />
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <select class="form-control" id="province" placeholder="Province" name="province" required></select>
-              </div>
-              <div class="form-group">
+              </div> -->
+              <!-- <div class="form-group">
                 <select class="form-control" id="city" placeholder="City" name="city" required></select>
-              </div>
+              </div> -->
               <hr>
             <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
             <button type="reset" class="btn btn-danger"><i class="fa fa-times fa-fw"></i>Reset</button>

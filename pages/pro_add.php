@@ -54,7 +54,7 @@ $sup .= "</select>";
 
                         <form role="form" method="post" action="pro_transac.php?action=add">
                             <div class="form-group">
-                              <input class="form-control" placeholder="Product Code" name="prodcode" required>
+                              <!-- <input class="form-control" placeholder="Product Code" name="prodcode" required> -->
                             </div>
                             <div class="form-group">
                               <input class="form-control" placeholder="Name" name="name" required>

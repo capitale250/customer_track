@@ -28,6 +28,8 @@ if ($Aa=='User'){
       $i= $row['FIRST_NAME'];
       $a=$row['LAST_NAME'];
       $b=$row['PHONE_NUMBER'];
+
+      $d=$row['birthdate'];
     }  
       $id = $_GET['id'];
 ?>
@@ -62,6 +64,14 @@ if ($Aa=='User'){
                 </div>
                 <div class="col-sm-9">
                    <input class="form-control" placeholder="Phone Number" name="phone" value="<?php echo $b; ?>" required>
+                </div>
+              </div>
+               <div class="form-group row text-left text-warning">
+                <div class="col-sm-3" style="padding-top: 5px;">
+                 Birth date:
+                </div>
+                <div class="col-sm-9">
+                   <input class="form-control" placeholder="Birth date" name="birthdate" value="<?php echo $d; ?>" required>
                 </div>
               </div>
               <hr>

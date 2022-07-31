@@ -51,30 +51,7 @@ if ($Aa=='User'){
               </div>
             </div>
 
-            <!-- Supplier record -->
-            <div class="col-md-12 mb-3">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-0">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Supplier</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">
-                        <?php 
-                        $query = "SELECT COUNT(*) FROM supplier";
-                        $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo "$row[0]";
-                          }
-                        ?> Record(s)
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+         
 
           </div>
             <!-- Employee ROW -->
@@ -85,10 +62,10 @@ if ($Aa=='User'){
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-0">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Employees</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">birth days</div>
                       <div class="h6 mb-0 font-weight-bold text-gray-800">
                         <?php 
-                        $query = "SELECT COUNT(*) FROM employee";
+                        $query = "SELECT COUNT(*) FROM customer WHERE MONTH(birthdate) = MONTH(NOW()) AND DAY(birthdate) = DAY(NOW());";
                         $result = mysqli_query($db, $query) or die(mysqli_error($db));
                         while ($row = mysqli_fetch_array($result)) {
                             echo "$row[0]";
@@ -104,29 +81,7 @@ if ($Aa=='User'){
               </div>
             </div>
             <!-- User record -->
-            <div class="col-md-12 mb-3">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-0">
-                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Registered Account</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">
-                        <?php 
-                        $query = "SELECT COUNT(*) FROM users WHERE TYPE_ID=2";
-                        $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo "$row[0]";
-                          }
-                        ?> Record(s)
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        
 
           </div>
           <!-- PRODUCTS ROW -->
@@ -143,7 +98,7 @@ if ($Aa=='User'){
                         <div class="col-auto">
                           <div class="h6 mb-0 mr-3 font-weight-bold text-gray-800">
                           <?php 
-                          $query = "SELECT COUNT(*) FROM product";
+                          $query = "SELECT COUNT(*) FROM products";
                           $result = mysqli_query($db, $query) or die(mysqli_error($db));
                           while ($row = mysqli_fetch_array($result)) {
                               echo "$row[0]";
@@ -185,7 +140,9 @@ if ($Aa=='User'){
                         <div class="panel-body">
                             <div class="list-group">
                               <?php 
-                                $query = "SELECT NAME, PRODUCT_CODE FROM product order by PRODUCT_ID DESC LIMIT 10";
+                                // $query = "SELECT NAME, PRODUCT_CODE FROM product order by PRODUCT_ID DESC LIMIT 10";
+                                $query = "SELECT NAMEP FROM products order by PRODUCT_ID asc limit 10";
+
                                 $result = mysqli_query($db, $query) or die(mysqli_error($db));
                                 while ($row = mysqli_fetch_array($result)) {
 
@@ -230,7 +187,7 @@ if ($Aa=='User'){
             </div> -->
             
 
-          </div>
+          <!-- </div> -->
 
 <?php
 include'../includes/footer.php';
