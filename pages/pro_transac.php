@@ -15,12 +15,12 @@ include'../includes/connection.php';
         
               switch($_GET['action']){
                 case 'add':  
-                for($i=0; $i < $qty; $i++){
+                // for($i=0; $i < $qty; $i++){
                     $query = "INSERT INTO products
                               (NAME, DESCRIPTION, QTY_STOCK, PRICE, DATE_STOCK_IN)
-                              VALUES ('{$name}','{$desc}',{$i},{$pr},'{$dats}')";
+                              VALUES ('{$name}','{$desc}',{$qty},{$pr},'{$dats}')";
                     mysqli_query($db,$query)or die ('Error in updating product in Database '.$query);
-                    }
+              //       }
                 break;
               }
             ?>
