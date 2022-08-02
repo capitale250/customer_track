@@ -157,7 +157,7 @@ if ($Aa=='User'){
                         </div>
                         <!-- /.panel-body -->
                     </div></div></div></div></div></div>
-          <!-- 
+          
           <div class="col-md-3">
            <div class="col-md-12 mb-2">
               <div class="card border-left-danger shadow h-100 py-2">
@@ -166,15 +166,22 @@ if ($Aa=='User'){
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-danger text-uppercase mb-1"><i class="fas fa-list text-danger">&nbsp;&nbsp;&nbsp;</i>Recent Products</div>
                       <div class="h6 mb-0 font-weight-bold text-gray-800">
-                        <?php 
-                          $query = "SELECT NAME FROM product order by PRODUCT_ID DESC LIMIT 10";
-                          $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                          while ($row = mysqli_fetch_array($result)) {
-                              echo "<ul style='list-style-position: outside'>";
-                              echo "<li>$row[0]</li>";
-                              echo "</ul>";
-                            }
-                          ?>
+                     <?php
+                            // Include the database configuration file
+                          
+
+                            // Get images from the database
+                            $query = "SELECT imgurl FROM products where PRODUCT_ID=36" ;
+                            $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                            $row = mysqli_fetch_array($result);
+                               if($row){
+                                    $imageURL = 'uploads/'.$row["imgurl"];
+                            ?>
+                                <img src="<?php echo $imageURL; ?>" alt="" />
+                            <?php 
+                            }else{ ?>
+                                <p>No image(s) found...</p>
+                            <?php } ?>
                       </div>
                     </div>
                     <div class="col-auto">
@@ -184,10 +191,10 @@ if ($Aa=='User'){
                 </div>
               </div>
             </div>
-            </div> -->
-            
+            </div> 
+             
 
-          <!-- </div> -->
+          </div>
 
 <?php
 include'../includes/footer.php';
