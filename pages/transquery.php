@@ -2,7 +2,7 @@
 include('../includes/connection.php');
 		
 			$cname = $_POST['cust_name'];
-		    $pname = $_POST['pro_name'];
+		    $prod_id = (int)$_POST['proname'];
 			$cost = (double)$_POST['total_cost'];
 	   	    $comment = $_POST['comment'];
             echo"$cname $pname  $cost $comment";
@@ -11,12 +11,12 @@ include('../includes/connection.php');
 			$result = mysqli_query($db, $query) or die(mysqli_error($db));
             $row = mysqli_fetch_assoc($result);
             $cust_id=(int) $row['CUST_ID'];
-            echo"=====$cust_id";
-            $query1 ='SELECT PRODUCT_ID FROM  products where NAMEP ="'.$pname.'" ';
-			$result1 = mysqli_query($db, $query1) or die(mysqli_error($db));
-            $row1 = mysqli_fetch_assoc($result1);
-            $prod_id=(int)$row1['PRODUCT_ID'];
-            echo"=====$prod_id";
+            echo" =====$cust_id";
+            // $query1 ='SELECT PRODUCT_ID FROM  products where NAMEP ="'.$pname.'" ';
+			// $result1 = mysqli_query($db, $query1) or die(mysqli_error($db));
+            // $row1 = mysqli_fetch_assoc($result1);
+            // $prod_id=(int)$row1['PRODUCT_ID'];
+            // echo"=====$prod_id";
             $date = date('Y-m-d H:i:s');
              echo"=====$date";
 

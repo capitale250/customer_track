@@ -19,13 +19,13 @@ include'../includes/sidebar.php';
 <?php
   }           
 }
-$sql = "SELECT DISTINCT CNAME, CATEGORY_ID FROM category order by CNAME asc";
+$sql = "SELECT  NAMEP FROM products";
 $result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
 
 $aaa = "<select class='form-control' name='category' required>
         <option disabled selected hidden>Select Category</option>";
   while ($row = mysqli_fetch_assoc($result)) {
-    $aaa .= "<option value='".$row['CATEGORY_ID']."'>".$row['CNAME']."</option>";
+    $aaa .= "<option value='".$row['PRODUCT_ID']."'>".$row['NAMEP']."</option>";
   }
 
 $aaa .= "</select>";
@@ -110,9 +110,11 @@ include'../includes/footer.php';
           </button>
         </div>
         <div class="modal-body">
-          <form role="form" method="post" action="pro_transac.php?action=add">
+          <form role="form" method="post" action="pro_transac.php?action=add"  enctype="multipart/form-data">
            <div class="form-group">
              <!-- <input class="form-control" placeholder="Product Code" name="prodcode" required> -->
+             <!-- <label class="form-label" for="customFile">Default file input example</label> -->
+             <input type="file" class="form-control" id="customFile" name="file" />
            </div>
            <div class="form-group">
              <input class="form-control" placeholder="Name" name="name" required>

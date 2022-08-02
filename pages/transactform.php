@@ -3,7 +3,19 @@ include'../includes/connection.php';
 include'../includes/sidebar.php';
 
 ?>
+<?php
+$sql = "SELECT  NAMEP ,PRODUCT_ID FROM products";
+$result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
 
+$aaa = "<select class='form-control' name='proname' required>
+        <option disabled selected hidden>Select Product name</option>";
+  while ($row = mysqli_fetch_assoc($result)) {
+    $aaa .= "<option value='".$row['PRODUCT_ID']."'>".$row['NAMEP']."</option>";
+  
+  }
+
+$aaa .= "</select>";
+?>
 <form role="form" method="post" action="transquery.php">
   <!-- 2 column grid layout with text inputs for the first and last names -->
   <div class="row mb-4">
@@ -15,8 +27,13 @@ include'../includes/sidebar.php';
     </div>
     <div class="col">
       <div class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" name="pro_name" required/>
-        <label class="form-label" for="form6Example2">product name</label>
+        <!-- <input type="text" id="form6Example2" class="form-control" name="pro_name" required/>
+        <label class="form-label" for="form6Example2">product name</label> -->
+        
+             <?php
+               echo $aaa;
+             ?>
+           
       </div>
     </div>
   </div>
