@@ -162,9 +162,9 @@ window.onload = function() {
                 <select class="form-control" id="city" placeholder="City" name="city" required></select>
               </div> -->
               <hr>
-            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
-            <button type="reset" class="btn btn-danger"><i class="fa fa-times fa-fw"></i>Reset</button>
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>      
+            <button type="submit" class="btn " style="background-color:#012241;color:white;"><i class="fa fa-check fa-fw"></i>Save</button>
+            <button type="reset" class="btn " style="border:2px solid #012241"><i class="fa fa-times fa-fw"></i>Reset</button>
+            <!-- <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>       -->
           </form>  
         </div>
       </div>

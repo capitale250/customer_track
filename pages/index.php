@@ -25,7 +25,7 @@ if ($Aa=='User'){
             ?>
           <div class="row show-grid">
             <!-- Customer ROW -->
-            <div class="col-md-3">
+            <div class="col-md-4">
             <!-- Customer record -->
             <div class="col-md-12 mb-3">
               <div class="card border-left-primary shadow h-100 py-2">
@@ -44,18 +44,17 @@ if ($Aa=='User'){
                       </div>
                     </div>
                       <div class="col-auto">
+                        <a href="customer.php" >
                         <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </a>
                       </div>
                   </div>
                 </div>
               </div>
             </div>
-
-         
-
-          </div>
+            </div>
             <!-- Employee ROW -->
-          <div class="col-md-3">
+          <div class="col-md-4">
             <!-- Employee record -->
             <div class="col-md-12 mb-3">
               <div class="card border-left-success shadow h-100 py-2">
@@ -70,10 +69,11 @@ if ($Aa=='User'){
                         while ($row = mysqli_fetch_array($result)) {
                             echo "$row[0]";
                           }
-                        ?> Record(s)
+                        ?> Birth days to day
                       </div>
                     </div>
                     <div class="col-auto">
+                      
                       <i class="fas fa-users fa-2x text-gray-300"></i>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ if ($Aa=='User'){
 
           </div>
           <!-- PRODUCTS ROW -->
-          <div class="col-md-3">
+          <div class="col-md-4">
             <!-- Product record -->
             <div class="col-md-12 mb-3">
               <div class="card border-left-info shadow h-100 py-2">
@@ -110,7 +110,10 @@ if ($Aa=='User'){
                     </div>
 
                     <div class="col-auto">
+                    <a href="product.php" >
+
                       <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                      </a>
                     </div>
 
                   </div>
@@ -119,9 +122,13 @@ if ($Aa=='User'){
             </div>
 
             </div>
-            
+             </div>
+         </div>
           <!-- RECENT PRODUCTS -->
-                <div class="col-lg-3">
+           <div class="row gy-5">
+                <div class="col-5">
+                  
+                <div class="col-lg-6">
                     <div class="card shadow h-100">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -133,15 +140,15 @@ if ($Aa=='User'){
                         <div class="panel-heading"> Recent Products
                         </div>
                         <div class="row no-gutters align-items-center mt-1">
-                        <div class="col-auto">
-                          <div class="h6 mb-0 mr-0 text-gray-800">
+                          <div class="col-auto">
+                             <div class="h6 mb-0 mr-0 text-gray-800">
                         <!-- /.panel-heading -->
                         
-                        <div class="panel-body">
-                            <div class="list-group">
+                             <div class="panel-body">
+                             <div class="list-group">
                               <?php 
                                 // $query = "SELECT NAME, PRODUCT_CODE FROM product order by PRODUCT_ID DESC LIMIT 10";
-                                $query = "SELECT NAMEP FROM products order by PRODUCT_ID asc limit 10";
+                                $query = "SELECT NAMEP FROM products order by PRODUCT_ID asc limit 7";
 
                                 $result = mysqli_query($db, $query) or die(mysqli_error($db));
                                 while ($row = mysqli_fetch_array($result)) {
@@ -156,45 +163,59 @@ if ($Aa=='User'){
                             <a href="product.php" class="btn btn-default btn-block">View All Products</a>
                         </div>
                         <!-- /.panel-body -->
-                    </div></div></div></div></div></div>
+                  </div></div></div></div></div></div>
           
-          <div class="col-md-3">
-           <div class="col-md-12 mb-2">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1"><i class="fas fa-list text-danger">&nbsp;&nbsp;&nbsp;</i>Recent Products</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-800">
-                     <?php
-                            // Include the database configuration file
-                          
-
-                            // Get images from the database
-                            $query = "SELECT imgurl FROM products where PRODUCT_ID=36" ;
-                            $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                            $row = mysqli_fetch_array($result);
-                               if($row){
-                                    $imageURL = 'uploads/'.$row["imgurl"];
-                            ?>
-                                <img src="<?php echo $imageURL; ?>" alt="" />
-                            <?php 
-                            }else{ ?>
-                                <p>No image(s) found...</p>
-                            <?php } ?>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      
-                    </div>
-                  </div>
+         
+         
+               
                 </div>
-              </div>
-            </div>
-            </div> 
-             
+                  </div>
+                <div class="col-7 "  >
+                  <div class="col-xl-10 col-lg-7"> 
+                            <div class="card shadow mb-4">
+                                
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Upcoming birthdayz</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <!-- <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <?php 
+                                            $query = "SELECT FIRST_NAME FROM customer WHERE birthdate BETWEEN CURDATE() - INTERVAL 1 WEEK AND CURDATE() + INTERVAL 1 WEEK limit 6";
+                                            $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                            while ($row = mysqli_fetch_array($result)) {
+                                                // echo "$row[0]";
+                                                echo "<a href='#' class='list-group-item text-gray-800'>
+                                          <li> $row[0]</li>
+                                          </a>";
+                                              }
+                                            ?>
+                                      
+                                       <a href="birthdays.php" class="btn btn-default btn-block">View All Nearby birth dayz</a>
+                                        <!-- <canvas id="myAreaChart">1</canvas> -->
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-          </div>
+              
+                </div>
 
 <?php
 include'../includes/footer.php';

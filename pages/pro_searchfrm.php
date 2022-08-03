@@ -22,85 +22,86 @@ include'../includes/sidebar.php';
             ?>
           <center><div class="card shadow mb-4 col-xs-12 col-md-8 " style="border-bottom:8px solid #012241;">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold " style="color:#012241;">Product's Detail</h4>
+              <h4 class="m-2 font-weight-bold " style="color:#012241;">Product Details</h4>
             </div>
             <a href="product.php?action=add" type="button" class="btn  btn-block" style="background-color:#012241;color:white"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back</a>
-            <div class="card-body">
-          <?php 
-            $query = 'SELECT * FROM products  WHERE PRODUCT_ID ='.$_GET['id'];
-            $result = mysqli_query($db, $query) or die(mysqli_error($db));
-              while($row = mysqli_fetch_array($result))
-              {   
-                $zz= $row['PRODUCT_ID'];
-                // $zzz= $row['PRODUCT_CODE'];
-                $i= $row['NAME'];
-                $a=$row['DESCRIPTION'];
-                $c=$row['PRICE'];
-                // $d=$row['CNAME'];
-              }
-              $id = $_GET['id'];
-          ?>
+            <div class="card-body d-flex flex-wrap">
+                  <?php 
+                    $query = 'SELECT * FROM products  WHERE PRODUCT_ID ='.$_GET['id'];
+                    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                      while($row = mysqli_fetch_array($result))
+                      {   
+                        $zz= $row['PRODUCT_ID'];
+                        // $zzz= $row['PRODUCT_CODE'];
+                        $i= $row['NAMEP'];
+                        $a=$row['DESCRIPTION'];
+                        $c=$row['PRICE'];
+                        // $d=$row['CNAME'];
+                        $imageURL = 'uploads/'.$row["imgurl"];
+                      }
+                      $id = $_GET['id'];
+                  ?>
 
-                  <!-- <div class="form-group row text-left">
-                      <div class="col-sm-3 text-primary">
-                        <h5>
-                          Product Code<br>
-                        </h5>
-                      </div>
-                      <div class="col-sm-9">
-                        <h5>
-                          : <?php echo $zzz; ?><br>
-                        </h5>
-                      </div>
-                    </div> -->
+              <div class="row gy-5">
+                <div class="col-6">
+               
+                    <img src="<?php echo $imageURL; ?>" class="img-fluid" alt="" />
+               
+                </div>
+                <div class="col-6">
+                  <!-- <div class="p-3">Custom column padding</div> -->
+                
+                      
                     <div class="form-group row text-left">
-                      <div class="col-sm-3 " style="color:#012241;">
+                      <div class="col-sm-10 " style="color:#012241;">
                         <h5>
                           Product Name<br>
                         </h5>
                       </div>
-                      <div class="col-sm-9">
+                      <div class="col-sm-10">
                         <h5>
                           : <?php echo $i; ?> <br>
                         </h5>
                       </div>
                     </div>
                   <div class="form-group row text-left">
-                      <div class="col-sm-3 " style="color:#012241;">
+                      <div class="col-sm-10 " style="color:#012241;">
                         <h5>
                           Description<br>
                         </h5>
                       </div>
-                      <div class="col-sm-9">
+                      <div class="col-sm-10">
                         <h5>
                           : <?php echo $a; ?><br>
                         </h5>
                       </div>
                     </div>
                   <div class="form-group row text-left">
-                      <div class="col-sm-3 " style="color:#012241;">
+                      <div class="col-sm-10" style="color:#012241;">
                         <h5>
                           Price<br>
                         </h5>
                       </div>
-                      <div class="col-sm-9">
+                      <div class="col-sm-10">
                         <h5>
                           : <?php echo $c; ?><br>
                         </h5>
                       </div>
                     </div>
                   <div class="form-group row text-left">
-                      <div class="col-sm-3 " style="color:#012241;">
+                      <div class="col-sm-10 " style="color:#012241;">
                         <h5>
                           Product id<br>
                         </h5>
                       </div>
-                      <div class="col-sm-9">
+                      <div class="col-sm-10">
                         <h5>
                           : <?php echo $zz; ?><br>
                         </h5>
                       </div>
                     </div>
+                </div>
+                </div>
                 </div>
           </div></center>
 

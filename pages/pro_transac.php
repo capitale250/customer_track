@@ -1,8 +1,8 @@
 <?php
 include'../includes/connection.php';
 ?>
-          <!-- Page Content -->
-          <!-- <div class="col-lg-12"> -->
+          Page Content
+          <div class="col-lg-12">
             <?php
              
               $name = $_POST['name'];
@@ -30,7 +30,7 @@ include'../includes/connection.php';
                   if(in_array($fileType, $allowTypes)){
                       // Upload file to server
                       
-                      if(move_uploaded_file($_FILES["file"]["tmp_name"], $tmp)){
+                      if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
                        
                        echo "-----------";
                   
@@ -66,11 +66,11 @@ include'../includes/connection.php';
               }
             ?>
               <script type="text/javascript">
-              //   alert("transaction Successfully.");
-              // window.location = "product.php";
+                alert("transaction Successfully.");
+              window.location = "product.php";
               </script>
-          <!-- </div> -->
+          </div>
 
-<!-- <?php
+<?php
 include'../includes/footer.php';
-?> -->
+?>

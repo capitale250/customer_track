@@ -74,11 +74,11 @@ $sup .= "</select>";
                       echo '<td align="right"> <div class="btn-group">
                               <a type="button" class="btn  " style="background-color:#012241;color:white;"href="pro_searchfrm.php?action=edit & id='.$row['PRODUCT_ID']. '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
                             <div class="btn-group">
-                              <a type="button" class="btn  dropdown no-arrow" style="background-color:#012241;color:white;" data-toggle="dropdown" style="color:white;">
+                              <a type="button" class="btn  dropdown no-arrow" data-toggle="dropdown" style="background-color:#012241;color:white;">
                               ... <span class="caret"></span></a>
                             <ul class="dropdown-menu text-center" role="menu">
                                 <li>
-                                  <a type="button" class="btn btn-warning bg-gradient-warning btn-block" style="border-radius: 0px;" href="pro_edit.php?action=edit & id='.$row['PRODUCT_ID']. '">
+                                  <a type="button" class="btn  btn-block" style="border-radius: 0px;" href="pro_edit.php?action=edit & id='.$row['PRODUCT_ID']. '">
                                     <i class="fas fa-fw fa-edit"></i> Edit
                                   </a>
                                 </li>
@@ -145,9 +145,8 @@ include'../includes/footer.php';
              <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" placeholder="Date Stock In" name="datestock" required>
            </div>
             <hr>
-            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
-            <button type="reset" class="btn btn-danger"><i class="fa fa-times fa-fw"></i>Reset</button>
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>      
+            <button type="submit" class="btn " style="background-color:#012241;color:white;"><i class="fa fa-check fa-fw"></i>Save</button>
+            <button type="reset" class="btn " style="border:2px solid #012241"><i class="fa fa-times fa-fw"></i>Reset</button>    
           </form>  
         </div>
       </div>
