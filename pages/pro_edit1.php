@@ -7,7 +7,7 @@ include('../includes/connection.php');
             $pr = $_POST['price'];
             // $cat = $_POST['category'];
 		
-	 			$query = 'UPDATE productS set NAMEP="'.$pname.'",
+	 			$query = 'UPDATE products set NAMEP="'.$pname.'",
 					DESCRIPTION="'.$desc.'", PRICE="'.$pr.'"  WHERE
 					PRODUCT_ID ="'.$zz.'"';
 					$result = mysqli_query($db, $query) or die(mysqli_error($db));

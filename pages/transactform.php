@@ -21,8 +21,11 @@ $aaa .= "</select>";
   <div class="row mb-4">
     <div class="col">
       <div class="form-outline">
-        <input type="text" id="form6Example1" class="form-control" name="cust_name" required/>
-        <label class="form-label" for="form6Example1">customer name</label>
+     
+        <input type="text" id="form6Example1" class="form-control" name="cust_name" placeholder="Enter firstname of customer" onkeyup="showHint(this.value); showPurchase(this.value);" required/>
+           <p>Last name: <span id="txtHint"></span></p>
+           <p>PURCHASES: <span id="txPurch"></span></p>
+        <!-- <label class="form-label" for="form6Example1">customer name</label> -->
       </div>
     </div>
     <div class="col">
@@ -69,14 +72,42 @@ $aaa .= "</select>";
   </div>
 
   <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
+  <!-- <div class="form-check d-flex justify-content-center mb-4"> -->
     <!-- <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked /> -->
-    <label class="form-check-label" for="form6Example8"> discount </label>
-  </div>
+    <!-- <label class="form-check-label" for="form6Example8"> discount </label> -->
+  <!-- </div> -->
 
   <!-- Submit button -->
   <button type="submit" class="btn  btn-block mb-4" style="background-color:#012241;">Place order</button>
 </form>
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  xmlhttp.open("GET", "loads.php?q=" + str);
+  xmlhttp.send();
+  }
+}
+function showPurchase(str) {
+  if (str.length == 0) {
+    document.getElementById("txPurch").innerHTML = "";
+    return;
+  } else {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      document.getElementById("txPurch").innerHTML = this.responseText;
+    }
+  xmlhttp.open("GET", "loadpurchases.php?q=" + str);
+  xmlhttp.send();
+  }
+}
+</script>
 <?php
 include'../includes/footer.php';
 ?>

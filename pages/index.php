@@ -125,11 +125,11 @@ if ($Aa=='User'){
              </div>
          </div>
           <!-- RECENT PRODUCTS -->
-           <div class="row gy-5">
+           <div class="row gy-5 show-grid ">
                 <div class="col-5">
                   
-                <div class="col-lg-6">
-                    <div class="card shadow h-100">
+                <div class="col-lg-6 ml-4">
+                    <div class="card shadow h-100" style="width: 28rem;">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
 
@@ -145,7 +145,7 @@ if ($Aa=='User'){
                         <!-- /.panel-heading -->
                         
                              <div class="panel-body">
-                             <div class="list-group">
+                             <div class="list-group" style="width: 24rem;">
                               <?php 
                                 // $query = "SELECT NAME, PRODUCT_CODE FROM product order by PRODUCT_ID DESC LIMIT 10";
                                 $query = "SELECT NAMEP FROM products order by PRODUCT_ID asc limit 7";
@@ -171,8 +171,8 @@ if ($Aa=='User'){
                 </div>
                   </div>
                 <div class="col-7 "  >
-                  <div class="col-xl-10 col-lg-7"> 
-                            <div class="card shadow mb-4">
+                  <div class="col-xl-10 col-lg-9"> 
+                            <div class="card shadow mb-4 " style="width: 40rem;">
                                 
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -184,11 +184,7 @@ if ($Aa=='User'){
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
-                                            <!-- <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a> -->
+
                                         </div>
                                     </div>
                                 </div>

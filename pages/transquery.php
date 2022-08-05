@@ -20,7 +20,7 @@ include('../includes/connection.php');
             $date = date('Y-m-d H:i:s');
              echo"=====$date";
 
-            $query4='SELECT COUNT(*) as total  FROM transactions  where prodid ="'.$prod_id.'" AND userid="'.$cust_id.'"  ';
+            $query4='SELECT COUNT(*) as total  FROM transactions  where  userid="'.$cust_id.'"  ';
             $result4 = mysqli_query($db, $query4) or die(mysqli_error($db));
             $row4 = mysqli_fetch_assoc($result4);
             $tota=$row4['total'];

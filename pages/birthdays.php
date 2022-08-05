@@ -53,6 +53,8 @@ include'../includes/sidebar.php';
                 echo '<td>'. $row['PHONE_NUMBER'].'</td>';
                 echo '<td>'. $row['birthdate'].'</td>';
                 echo '<td>'. $row['gender'].'</td>';
+                // echo '<td align="right"> <div class="btn-group">
+                //               <a type="button" class="btn  " style="background-color:#012241;color:white;"href="mail.php?action=edit & emailp='.$row['email']. '"><i class="fas fa-fw fa-list-alt"></i>email</a></div></td>';
             
                         }
 ?> 
